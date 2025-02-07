@@ -12,38 +12,71 @@
             background-color: #f4f4f4;
         }
         header {
-            background-color: #004080;
+            background-color: #007b3e;
             color: white;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
         }
         nav {
             display: flex;
             justify-content: center;
-            background: #003366;
-            padding: 10px;
+            background: #004080;
+            padding: 15px;
         }
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 0 20px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00;
+        }
+        .hero {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/La_Molina.jpg/1200px-La_Molina.jpg') center/cover;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
         }
         .container {
-            padding: 20px;
-            max-width: 900px;
+            padding: 40px;
+            max-width: 1000px;
             margin: auto;
             background: white;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
         }
+        .contact-form {
+            margin-top: 20px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .contact-form button {
+            background-color: #007b3e;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
         footer {
             text-align: center;
-            padding: 10px;
-            background: #003366;
+            padding: 15px;
+            background: #004080;
             color: white;
             margin-top: 20px;
+            font-size: 14px;
         }
     </style>
 </head>
@@ -59,6 +92,9 @@
         <a href="#seguridad">Seguridad</a>
         <a href="#contacto">Contacto</a>
     </nav>
+    <div class="hero">
+        Bienvenido a tu comunidad
+    </div>
     <div class="container">
         <section id="inicio">
             <h2>Bienvenido al Condominio Parque de Monterrico I</h2>
@@ -80,9 +116,19 @@
             <h2>Seguridad y Emergencias</h2>
             <p>Planes de evacuación, protocolos de seguridad y números de contacto de serenazgo, bomberos y policía.</p>
         </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Para cualquier consulta, completa el siguiente formulario:</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <textarea placeholder="Mensaje" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
     </div>
     <footer>
-        <p>&copy; 2025 Condominio Parque de Monterrico I</p>
+        &copy; 2025 Condominio Parque de Monterrico I
     </footer>
 </body>
 </html>
