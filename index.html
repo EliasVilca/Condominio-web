@@ -30,11 +30,14 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
-            transition: color 0.3s;
+            transition: background 0.3s, color 0.3s;
             cursor: pointer;
+            padding: 10px;
         }
-        nav a:hover {
-            color: #ffcc00;
+        nav a.active {
+            background: #ffcc00;
+            color: #004080;
+            border-radius: 5px;
         }
         .hero {
             background: url('fachada.jpg') center/cover no-repeat;
@@ -69,7 +72,7 @@
             display: none;
             padding: 20px;
         }
-        .active {
+        .active-section {
             display: block;
         }
         footer {
@@ -84,9 +87,14 @@
     <script>
         function showSection(sectionId) {
             document.querySelectorAll('.section-content').forEach(section => {
-                section.classList.remove('active');
+                section.classList.remove('active-section');
             });
-            document.getElementById(sectionId).classList.add('active');
+            document.getElementById(sectionId).classList.add('active-section');
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`nav a[data-section='${sectionId}']`).classList.add('active');
         }
     </script>
 </head>
@@ -95,18 +103,19 @@
         Condominio Parque de Monterrico I
     </header>
     <nav>
-        <a onclick="showSection('inicio')">Inicio</a>
-        <a onclick="showSection('nosotros')">Nosotros</a>
-        <a onclick="showSection('normativas')">Reglamentos</a>
-        <a onclick="showSection('noticias')">Noticias</a>
-        <a onclick="showSection('seguridad')">Seguridad</a>
-        <a onclick="showSection('contacto')">Contacto</a>
+        <a data-section="inicio" onclick="showSection('inicio')">Inicio</a>
+        <a data-section="nosotros" onclick="showSection('nosotros')">Nosotros</a>
+        <a data-section="normativas" onclick="showSection('normativas')">Reglamentos</a>
+        <a data-section="noticias" onclick="showSection('noticias')">Noticias</a>
+        <a data-section="seguridad" onclick="showSection('seguridad')">Seguridad</a>
+        <a data-section="finanzas" onclick="showSection('finanzas')">Finanzas</a>
+        <a data-section="contacto" onclick="showSection('contacto')">Contacto</a>
     </nav>
     <div class="hero">
         Bienvenido a tu comunidad
     </div>
     <div class="container">
-        <section id="inicio" class="section-content active">
+        <section id="inicio" class="section-content active-section">
             <h2>Bienvenido al Condominio Parque de Monterrico I</h2>
             <p>Centralizamos la información del condominio, facilitamos la comunicación con vecinos y gestionamos pagos y solicitudes.</p>
         </section>
@@ -125,6 +134,17 @@
         <section id="seguridad" class="section-content">
             <h2>Seguridad y Emergencias</h2>
             <p>Planes de evacuación, protocolos de seguridad y números de contacto de serenazgo, bomberos y policía.</p>
+        </section>
+        <section id="finanzas" class="section-content">
+            <h2>Estados Financieros</h2>
+            <p>Aquí puedes ver el estado financiero del condominio:</p>
+            <ul>
+                <li>Departamentos al día: 85%</li>
+                <li>Morosos: 15%</li>
+                <li>Recaudación mensual: S/ 50,000</li>
+                <li>Inversiones ejecutadas: S/ 20,000</li>
+                <li>Pagos a proveedores: S/ 15,000</li>
+            </ul>
         </section>
         <section id="contacto" class="section-content">
             <h2>Contacto</h2>
