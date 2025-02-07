@@ -31,13 +31,14 @@
             font-weight: bold;
             font-size: 18px;
             transition: color 0.3s;
+            cursor: pointer;
         }
         nav a:hover {
             color: #ffcc00;
         }
         .hero {
-            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/La_Molina.jpg/1200px-La_Molina.jpg') center/cover;
-            height: 300px;
+            background: url('fachada.jpg') center/cover no-repeat;
+            height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -45,6 +46,16 @@
             font-size: 36px;
             font-weight: bold;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
         }
         .container {
             padding: 40px;
@@ -54,21 +65,12 @@
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
         }
-        .contact-form {
-            margin-top: 20px;
+        .section-content {
+            display: none;
+            padding: 20px;
         }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-        }
-        .contact-form button {
-            background-color: #007b3e;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            cursor: pointer;
-            margin-top: 10px;
+        .active {
+            display: block;
         }
         footer {
             text-align: center;
@@ -79,47 +81,55 @@
             font-size: 14px;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section-content').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 </head>
 <body>
     <header>
         Condominio Parque de Monterrico I
     </header>
     <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#normativas">Reglamentos</a>
-        <a href="#noticias">Noticias</a>
-        <a href="#seguridad">Seguridad</a>
-        <a href="#contacto">Contacto</a>
+        <a onclick="showSection('inicio')">Inicio</a>
+        <a onclick="showSection('nosotros')">Nosotros</a>
+        <a onclick="showSection('normativas')">Reglamentos</a>
+        <a onclick="showSection('noticias')">Noticias</a>
+        <a onclick="showSection('seguridad')">Seguridad</a>
+        <a onclick="showSection('contacto')">Contacto</a>
     </nav>
     <div class="hero">
         Bienvenido a tu comunidad
     </div>
     <div class="container">
-        <section id="inicio">
+        <section id="inicio" class="section-content active">
             <h2>Bienvenido al Condominio Parque de Monterrico I</h2>
             <p>Centralizamos la información del condominio, facilitamos la comunicación con vecinos y gestionamos pagos y solicitudes.</p>
         </section>
-        <section id="nosotros">
+        <section id="nosotros" class="section-content">
             <h2>Nosotros</h2>
             <p>Administrado por la junta directiva, este condominio busca ofrecer un ambiente seguro y organizado para sus residentes.</p>
         </section>
-        <section id="normativas">
+        <section id="normativas" class="section-content">
             <h2>Reglamentos y Normativas</h2>
             <p>Consulta y descarga documentos importantes como el reglamento interno, estatutos y normas de seguridad.</p>
         </section>
-        <section id="noticias">
+        <section id="noticias" class="section-content">
             <h2>Noticias y Anuncios</h2>
             <p>Últimos avisos sobre mantenimiento, reuniones, mejoras y avisos de seguridad.</p>
         </section>
-        <section id="seguridad">
+        <section id="seguridad" class="section-content">
             <h2>Seguridad y Emergencias</h2>
             <p>Planes de evacuación, protocolos de seguridad y números de contacto de serenazgo, bomberos y policía.</p>
         </section>
-        <section id="contacto">
+        <section id="contacto" class="section-content">
             <h2>Contacto</h2>
             <p>Para cualquier consulta, completa el siguiente formulario:</p>
-            <form class="contact-form">
+            <form>
                 <input type="text" placeholder="Nombre" required>
                 <input type="email" placeholder="Correo electrónico" required>
                 <textarea placeholder="Mensaje" rows="4" required></textarea>
