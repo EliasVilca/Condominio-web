@@ -23,13 +23,14 @@
             justify-content: center;
             background: #004080;
             padding: 15px;
+            flex-wrap: wrap;
         }
         nav a {
             color: white;
-            margin: 0 20px;
+            margin: 5px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 16px;
             transition: background 0.3s, color 0.3s;
             cursor: pointer;
             padding: 10px;
@@ -41,15 +42,17 @@
         }
         .hero {
             background: url('fachada.jpg') center/cover no-repeat;
-            height: 400px;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 36px;
+            font-size: 24px;
             font-weight: bold;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
             position: relative;
+            text-align: center;
+            padding: 20px;
         }
         .hero::before {
             content: "";
@@ -61,8 +64,8 @@
             background: rgba(0, 0, 0, 0.4);
         }
         .container {
-            padding: 40px;
-            max-width: 1000px;
+            padding: 20px;
+            max-width: 100%;
             margin: auto;
             background: white;
             border-radius: 8px;
@@ -82,6 +85,20 @@
             color: white;
             margin-top: 20px;
             font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                font-size: 14px;
+                padding: 8px;
+            }
+            .hero {
+                font-size: 20px;
+                height: 250px;
+            }
         }
     </style>
     <script>
@@ -114,7 +131,7 @@
     <div class="hero">
         Bienvenido a tu comunidad
         <br>
-        <span style="font-size: 20px; font-weight: normal;">"Construyendo juntos una comunidad digital, transparente y conectada"</span>
+        <span style="font-size: 18px; font-weight: normal;">"Construyendo juntos una comunidad digital, transparente y conectada"</span>
     </div>
     <div class="container">
         <section id="inicio" class="section-content active-section">
@@ -123,47 +140,9 @@
             <p>Sabemos que el cambio a plataformas digitales puede ser un desafío, pero estamos seguros de que esta herramienta facilitará la vida de todos los vecinos. Aquí encontrarás información en tiempo real sobre la administración, estados financieros, normativas y más.</p>
             <p>Tu participación es clave para construir una comunidad más organizada y conectada. ¡Explora el sitio y descubre cómo juntos podemos hacer de nuestro condominio un mejor lugar para vivir!</p>
         </section>
-        <section id="nosotros" class="section-content">
-            <h2>Nosotros</h2>
-            <p>Administrado por la junta directiva, este condominio busca ofrecer un ambiente seguro y organizado para sus residentes.</p>
-        </section>
-        <section id="normativas" class="section-content">
-            <h2>Reglamentos y Normativas</h2>
-            <p>Consulta y descarga documentos importantes como el reglamento interno, estatutos y normas de seguridad.</p>
-        </section>
-        <section id="noticias" class="section-content">
-            <h2>Noticias y Anuncios</h2>
-            <p>Últimos avisos sobre mantenimiento, reuniones, mejoras y avisos de seguridad.</p>
-        </section>
-        <section id="seguridad" class="section-content">
-            <h2>Seguridad y Emergencias</h2>
-            <p>Planes de evacuación, protocolos de seguridad y números de contacto de serenazgo, bomberos y policía.</p>
-        </section>
-        <section id="finanzas" class="section-content">
-            <h2>Estados Financieros</h2>
-            <p>Aquí puedes ver el estado financiero del condominio:</p>
-            <ul>
-                <li>Departamentos al día: 85%</li>
-                <li>Morosos: 15%</li>
-                <li>Recaudación mensual: S/ 50,000</li>
-                <li>Inversiones ejecutadas: S/ 20,000</li>
-                <li>Pagos a proveedores: S/ 15,000</li>
-            </ul>
-        </section>
-        <section id="contacto" class="section-content">
-            <h2>Contacto</h2>
-            <p>Para cualquier consulta, completa el siguiente formulario:</p>
-            <form>
-                <input type="text" placeholder="Nombre" required>
-                <input type="email" placeholder="Correo electrónico" required>
-                <textarea placeholder="Mensaje" rows="4" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
     </div>
     <footer>
         &copy; 2025 Condominio Parque de Monterrico I
     </footer>
 </body>
 </html>
-
