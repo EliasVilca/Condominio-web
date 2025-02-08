@@ -106,12 +106,20 @@
             document.querySelectorAll('.section-content').forEach(section => {
                 section.classList.remove('active-section');
             });
-            document.getElementById(sectionId).classList.add('active-section');
+            
+            var activeSection = document.getElementById(sectionId);
+            if (activeSection) {
+                activeSection.classList.add('active-section');
+            }
 
             document.querySelectorAll('nav a').forEach(link => {
                 link.classList.remove('active');
             });
-            document.querySelector(`nav a[data-section='${sectionId}']`).classList.add('active');
+            
+            var activeLink = document.querySelector(`nav a[data-section='${sectionId}']`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
         }
     </script>
 </head>
@@ -139,6 +147,10 @@
             <p>Este sitio web ha sido creado para mejorar la comunicación, la transparencia y la eficiencia en la gestión del condominio.</p>
             <p>Sabemos que el cambio a plataformas digitales puede ser un desafío, pero estamos seguros de que esta herramienta facilitará la vida de todos los vecinos. Aquí encontrarás información en tiempo real sobre la administración, estados financieros, normativas y más.</p>
             <p>Tu participación es clave para construir una comunidad más organizada y conectada. ¡Explora el sitio y descubre cómo juntos podemos hacer de nuestro condominio un mejor lugar para vivir!</p>
+        </section>
+        <section id="nosotros" class="section-content">
+            <h2>Nosotros</h2>
+            <p>Administrado por la junta directiva, este condominio busca ofrecer un ambiente seguro y organizado para sus residentes.</p>
         </section>
     </div>
     <footer>
