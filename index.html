@@ -65,7 +65,7 @@
         }
         .container {
             padding: 20px;
-            max-width: 100%;
+            max-width: 1000px;
             margin: auto;
             background: white;
             border-radius: 8px;
@@ -110,6 +110,7 @@
             var activeSection = document.getElementById(sectionId);
             if (activeSection) {
                 activeSection.classList.add('active-section');
+                activeSection.scrollIntoView({ behavior: 'smooth' });
             }
 
             document.querySelectorAll('nav a').forEach(link => {
@@ -145,12 +146,30 @@
         <section id="inicio" class="section-content active-section">
             <h2>Bienvenido a la nueva era del Condominio Parque de Monterrico I</h2>
             <p>Este sitio web ha sido creado para mejorar la comunicación, la transparencia y la eficiencia en la gestión del condominio.</p>
-            <p>Sabemos que el cambio a plataformas digitales puede ser un desafío, pero estamos seguros de que esta herramienta facilitará la vida de todos los vecinos. Aquí encontrarás información en tiempo real sobre la administración, estados financieros, normativas y más.</p>
-            <p>Tu participación es clave para construir una comunidad más organizada y conectada. ¡Explora el sitio y descubre cómo juntos podemos hacer de nuestro condominio un mejor lugar para vivir!</p>
         </section>
         <section id="nosotros" class="section-content">
             <h2>Nosotros</h2>
             <p>Administrado por la junta directiva, este condominio busca ofrecer un ambiente seguro y organizado para sus residentes.</p>
+        </section>
+        <section id="normativas" class="section-content">
+            <h2>Reglamentos y Normativas</h2>
+            <p>Consulta y descarga documentos importantes como el reglamento interno, estatutos y normas de seguridad.</p>
+        </section>
+        <section id="noticias" class="section-content">
+            <h2>Noticias y Anuncios</h2>
+            <p>Últimos avisos sobre mantenimiento, reuniones, mejoras y avisos de seguridad.</p>
+        </section>
+        <section id="seguridad" class="section-content">
+            <h2>Seguridad y Emergencias</h2>
+            <p>Planes de evacuación, protocolos de seguridad y números de contacto de serenazgo, bomberos y policía.</p>
+        </section>
+        <section id="finanzas" class="section-content">
+            <h2>Estados Financieros</h2>
+            <p>Información sobre el estado financiero del condominio.</p>
+        </section>
+        <section id="contacto" class="section-content">
+            <h2>Contacto</h2>
+            <p>Para cualquier consulta, completa el siguiente formulario.</p>
         </section>
     </div>
     <footer>
